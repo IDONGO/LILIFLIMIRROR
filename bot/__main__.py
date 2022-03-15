@@ -67,7 +67,7 @@ def start(update, context):
 '''
         update.effective_message.reply_photo(IMAGE_URL, start_string, parse_mode=ParseMode.MARKDOWN, reply_markup=reply_markup)
     else:
-        sendMessage(f"𝙃𝙚𝙮, 𝙄𝙛 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙪𝙨𝙚 𝙢𝙚, 𝙋𝙡𝙚𝙖𝙨𝙚 𝙘𝙤𝙣𝙩𝙖𝙘𝙩 𝙊𝙬𝙣𝙚𝙧 𝙩𝙤 𝙜𝙚𝙩 𝙖𝙘𝙘𝙚𝙨𝙨.", context.bot, update.message)
+        sendMessage(f"𝙃𝙚𝙮, 𝙄𝙛 𝙮𝙤𝙪 𝙬𝙖𝙣𝙩 𝙩𝙤 𝙪𝙨𝙚 𝙢𝙚, 𝙋𝙡𝙚𝙖𝙨𝙚 𝙘𝙤𝙣𝙩𝙖𝙘𝙩 𝙊𝙬𝙣𝙚𝙧 𝙩𝙤 𝙜𝙚𝙩 𝙖𝙘𝙘𝙚𝙨𝙨.", context.bot, update.message, reply_markup)
 
 def restart(update, context):
     restart_message = sendMessage("𝚁𝚎𝚜𝚝𝚊𝚛𝚝𝚒𝚗𝚐...", context.bot, update.message)
@@ -98,7 +98,7 @@ def ping(update, context):
 
 
 def log(update, context):
-    sendLogFile(context.bot, update)
+    sendLogFile(context.bot, update.message)
 
 
 help_string_telegraph = f'''<br>
@@ -212,7 +212,7 @@ def bot_help(update, context):
     buttons.buildbutton("𝗔𝗱𝘃𝗮𝗻𝗰𝗲 𝗖𝗠𝗗", f"https://telegra.ph/{help_tgh}")
     buttons.buildbutton("𝗡𝗼𝘁𝗲𝘀 𝗙𝗲𝗮𝘁𝘂𝗿𝗲", f"https://telegra.ph/Magneto-Python-Aria---Custom-Filename-Examples-01-20")
     reply_markup = InlineKeyboardMarkup(buttons.build_menu(1))
-    sendMarkup(helps, context.bot, update, reply_markup)
+    sendMarkup(helps, context.bot, update.message, reply_markup)
 
 botcmds = [
 
