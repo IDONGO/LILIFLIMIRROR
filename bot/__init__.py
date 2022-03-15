@@ -145,7 +145,6 @@ try:
         DOWNLOAD_DIR = DOWNLOAD_DIR + '/'
     DOWNLOAD_STATUS_UPDATE_INTERVAL = int(getConfig('DOWNLOAD_STATUS_UPDATE_INTERVAL'))
     OWNER_ID = int(getConfig('OWNER_ID'))
-    OWNER = getConfig('OWNER')
     AUTO_DELETE_MESSAGE_DURATION = int(getConfig('AUTO_DELETE_MESSAGE_DURATION'))
     TELEGRAM_API = getConfig('TELEGRAM_API')
     TELEGRAM_HASH = getConfig('TELEGRAM_HASH')
@@ -247,6 +246,14 @@ try:
         raise KeyError
 except KeyError:
     SEARCH_API_LINK = None
+try:
+    SEARCH_LIMIT = getConfig('SEARCH_LIMIT')
+    if len(SEARCH_LIMIT) == 0:
+        raise KeyError
+    else:
+        SEARCH_LIMIT = int(SEARCH_LIMIT)
+except KeyError:
+    SEARCH_LIMIT = 10
 try:
     RSS_COMMAND = getConfig('RSS_COMMAND')
     if len(RSS_COMMAND) == 0:
@@ -390,12 +397,6 @@ try:
 except KeyError:
     SHORTENER = None
     SHORTENER_API = None
-try:
-    IMAGE_URL = getConfig('IMAGE_URL')
-    if len(IMAGE_URL) == 0:
-        IMAGE_URL = 'https://telegra.ph/file/eeb1581d70096a6b62133.jpg'
-except KeyError:
-    IMAGE_URL = 'https://telegra.ph/file/eeb1581d70096a6b62133.jpg'
 try:
     IGNORE_PENDING_REQUESTS = getConfig("IGNORE_PENDING_REQUESTS")
     IGNORE_PENDING_REQUESTS = IGNORE_PENDING_REQUESTS.lower() == 'true'
