@@ -4,7 +4,7 @@ from bot import CMD_INDEX
 class _BotCommands:
     def __init__(self):
         self.StartCommand = f'start{CMD_INDEX}'
-        self.MirrorCommand = f'lili{CMD_INDEX}'
+        self.MirrorCommand = f'mirror{CMD_INDEX}'
         self.UnzipMirrorCommand = f'unzipmirror{CMD_INDEX}'
         self.ZipMirrorCommand = f'zipmirror{CMD_INDEX}'
         self.CancelMirror = f'cancel{CMD_INDEX}'
@@ -22,7 +22,6 @@ class _BotCommands:
         self.StatsCommand = f'stats{CMD_INDEX}'
         self.HelpCommand = f'help{CMD_INDEX}'
         self.LogCommand = f'log{CMD_INDEX}'
-        self.SpeedCommand = f'speedtest{CMD_INDEX}'
         self.CloneCommand = f'clone{CMD_INDEX}'
         self.CountCommand = f'count{CMD_INDEX}'
         self.WatchCommand = f'watch{CMD_INDEX}'
@@ -43,10 +42,14 @@ class _BotCommands:
         self.QbZipLeechCommand = f'qbzipleech{CMD_INDEX}'
         self.LeechWatchCommand = f'leechwatch{CMD_INDEX}'
         self.LeechZipWatchCommand = f'leechzipwatch{CMD_INDEX}'
+        self.BtSelectCommand = f'btsel{CMD_INDEX}'
         self.RssListCommand = f'rsslist{CMD_INDEX}'
         self.RssGetCommand = f'rssget{CMD_INDEX}'
         self.RssSubCommand = f'rsssub{CMD_INDEX}'
         self.RssUnSubCommand = f'rssunsub{CMD_INDEX}'
         self.RssSettingsCommand = f'rssset{CMD_INDEX}'
+        self.EvalCommand = f'eval{CMD_INDEX}'
+        self.ExecCommand = f'exec{CMD_INDEX}'
+        self.ClearLocalsCommand = f'clearlocals{CMD_INDEX}'
 
 BotCommands = _BotCommands()
